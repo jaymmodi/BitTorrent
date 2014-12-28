@@ -1,0 +1,33 @@
+bt :	bt_lib.o bt_setup.o ParseTorrent.o NetworkSocket.o BitTorrent.cpp	
+		g++ -g -std=c++11 bt_lib.o bt_setup.o ParseTorrent.o NetworkSocket.o BitTorrent.cpp -lssl -lcrypto -o bt
+
+bt_lib.o: bt_lib.cpp
+		g++ -g -std=c++11 -c bt_lib.cpp -o bt_lib.o
+
+bt_setup.o: bt_setup.cpp
+		g++ -g -std=c++11 -c bt_setup.cpp -o bt_setup.o
+
+
+ParseTorrent.o:	ParseTorrent.cpp
+		g++ -g -std=c++11 -c ParseTorrent.cpp -o ParseTorrent.o
+
+NetworkSocket.o: NetworkSocket.cpp
+		g++ -g -std=c++11 -c NetworkSocket.cpp -o NetworkSocket.o
+
+clean:
+	rm *.o bt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
